@@ -7,7 +7,7 @@ with open(F"database.txt", "w") as archivo:
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
     
-    datos = pd.read_csv("sobar-72.csv")
+    datos = pd.read_csv("entrenamiento.csv")
     
     #print(datos)
     
@@ -15,7 +15,16 @@ with open(F"database.txt", "w") as archivo:
         moda = datos[column].value_counts()
         print(moda)
         
-    random.seed(42)  # Esto establece una semilla para que los números aleatorios sean reproducibles.
+    df_0 = datos[datos['ca_cervix'] == 0]
+    df_1 = datos[datos['ca_cervix'] == 1]
+    
+    print(f"Contienen 0: no cervical cancer #{len(df_0)}")
+    print(df_0)
+    print("**********************************************")
+    print(f"Contienen 1: has cervical cancer #{len(df_1)}")
+    print(df_1)
+        
+    '''random.seed(42)  # Esto establece una semilla para que los números aleatorios sean reproducibles.
     indices_seleccionados = random.sample(range(len(datos)), 58)
     entrenamiento = datos.loc[indices_seleccionados]
 
@@ -24,6 +33,6 @@ with open(F"database.txt", "w") as archivo:
 
     # Finalmente, puedes guardar estos DataFrames en archivos CSV.
     entrenamiento.to_csv('entrenamiento.csv', index=False)
-    prueba.to_csv('prueba.csv', index=False)   
+    prueba.to_csv('prueba.csv', index=False)'''
 
     
