@@ -1,3 +1,11 @@
+behavior_sexualRisk
+10    52
+7      2
+8      1
+9      1
+2      1
+6      1
+Name: count, dtype: int64
 Contienen 0: no cervical cancer #43
 behavior_sexualRisk
 10    42

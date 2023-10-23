@@ -9,7 +9,9 @@ with open(F"database.txt", "w") as archivo:
     
     datos = pd.read_csv("entrenamiento.csv")
     
-    #print(datos)
+    
+    
+    print(datos['behavior_sexualRisk'].value_counts())
         
     df_0 = datos[datos['ca_cervix'] == 0]
     
