@@ -10,19 +10,23 @@ with open(F"database.txt", "w") as archivo:
     datos = pd.read_csv("entrenamiento.csv")
     
     #print(datos)
-    
-    for column in datos.columns :
-        moda = datos[column].value_counts()
-        print(moda)
         
     df_0 = datos[datos['ca_cervix'] == 0]
-    df_1 = datos[datos['ca_cervix'] == 1]
     
     print(f"Contienen 0: no cervical cancer #{len(df_0)}")
-    print(df_0)
+   
+    moda = df_0['behavior_sexualRisk'].value_counts()
+    print(moda)
+    
+    
+    #print(df_0)
     print("**********************************************")
+    df_1 = datos[datos['ca_cervix'] == 1]
     print(f"Contienen 1: has cervical cancer #{len(df_1)}")
-    print(df_1)
+    
+    moda = df_1['behavior_sexualRisk'].value_counts()
+    print(moda)
+    #print(df_1)
         
     '''random.seed(42)  # Esto establece una semilla para que los números aleatorios sean reproducibles.
     indices_seleccionados = random.sample(range(len(datos)), 58)
